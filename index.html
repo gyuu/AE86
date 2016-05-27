@@ -18,7 +18,7 @@
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onload="createImageLayer();">
     <div class="container">
 
       <div class="row">
@@ -36,7 +36,8 @@
         <div class="col-md-6 col-md-offset-3">
 
           <div class="wrapper video">
-            <img class="img-responsive" src="static/img/video2.jpg" />
+            <!-- <img class="img-responsive" src="static/img/video2.jpg" /> -->
+            <div id="webcam" style="width:640px; height:480px;"></div>
           </div>
 
         </div>
@@ -253,5 +254,43 @@
       });
 
     </script>
+
+    <script type="text/javascript">
+        /* Copyright (C) 2007 Richard Atterer, richard©atterer.net
+         This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, ver
+         sion 2. See the file COPYING for details. */
+        var imageNr = 0; // Serial number of current image
+        var finished = new Array(); // References to img objects which have finished downloading
+        var paused = false;
+        //createImageLayer();
+        function createImageLayer() {
+            var img = new Image();
+            img.style.position = "absolute";
+            img.style.zIndex = -1;
+            img.onload = imageOnload;
+            img.onclick = imageOnclick;
+            img.src = "http://192.168.16.102:8081/?action=snapshot&n=" + (++imageNr);
+            img.height = "480";
+            img.width = "640";
+            var webcam = document.getElementById("webcam");
+            console.log(webcam.firstChild);
+            webcam.insertBefore(img, webcam.firstChild);
+        }
+        // Two layers are always present (except at the very beginning), to avoid flicker
+        function imageOnload() {
+            this.style.zIndex = imageNr; // Image finished, bring to front!
+            while (1 < finished.length) {
+                var del = finished.shift(); // Delete old image(s) from document
+                del.parentNode.removeChild(del);
+            }
+            finished.push(this);
+            if (!paused) createImageLayer();
+        }
+        function imageOnclick() { // Clicking on the image will pause the stream
+            paused = !paused;
+            if (!paused) createImageLayer();
+        }
+    </script>
+
   </body>
 </html>
