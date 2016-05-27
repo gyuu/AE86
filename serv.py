@@ -5,7 +5,7 @@ from flask import (
     jsonify,
     )
 
-# from car import move
+from car import move
 
 app = Flask(__name__, template_folder=".")
 
@@ -20,7 +20,7 @@ def car():
 	if not op:
 		return jsonify(status='400', mesg='no op.')
 	else:
-		# move(op)
+		move(op)
 		return jsonify(status='200', mesg=op)
 
 if __name__ == '__main__':
