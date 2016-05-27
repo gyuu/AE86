@@ -20,7 +20,7 @@ def car():
 	if not op:
 		return jsonify(status='400', mesg='no op.')
 	else:
-		# move(op)
+		move(op)
 		return jsonify(status='200', mesg=op)
 
 if __name__ == '__main__':
