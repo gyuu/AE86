@@ -1,0 +1,152 @@
+.video {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.title {
+	margin-top: 20px;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.wc {
+	width: 100%;
+	height: 100%;
+}
+
+.mdzz {
+	top:50%;
+}
+
+.is-Flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.cube {
+	display: inline-block;
+	position: relative;
+	border: none;
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	top:10px;
+}
+
+.circle {
+	display: inline-block;
+	position: relative;
+	border: none;
+	height: 40px;
+	width: 40px;
+	border-radius: 20px;
+	background-color: #99ccff;
+	margin: 0 auto;
+	transition: background-color 0.5s;
+}
+
+.circle:hover {
+	background-color: #6699cc;
+}
+
+.dontseeme {
+	display: inline-block;
+	position: relative;
+	border: none;
+	height: 40px;
+	width: 40px;
+	border-radius: 20px;
+	background-color: #ffffff;
+}
+
+.arrow {
+	display: block;
+	position: absolute;
+	border: none;
+	background-color: white;
+}
+
+.arrow-horizon {
+	height: 3px;
+	width: 17px;
+}
+
+.arrow-vertical {
+	height: 17px;
+	width: 3px;
+}
+
+.arrow-up-left {
+	top: 50%;
+	margin-top: -2px;
+	right: 50%;
+	margin-right: -2px;
+	transform: rotate(-30deg);
+}
+
+.arrow-up-right {
+	top: 50%;
+	margin-top: -2px;
+	left:50%;
+	margin-left: -2px;
+	transform: rotate(30deg);
+}
+
+.arrow-down-left {
+	top: 50%;
+	margin-top: 2px;
+	right: 50%;
+	margin-right: -2px;
+	transform: rotate(30deg);
+}
+
+.arrow-down-right {
+	top: 50%;
+	margin-top: 2px;
+	left:50%;
+	margin-left: -2px;
+	transform: rotate(150deg);
+}
+
+.arrow-left-left {
+	left: 50%;
+	margin-left: -2px;
+	top: 50%;
+	margin-top: -2px;
+	transform: rotate(-30deg);
+}
+
+.arrow-left-right {
+	left: 50%;
+	margin-left: -2px;
+	bottom: 50%;
+	margin-bottom: -2px;
+	transform: rotate(30deg);
+}
+
+.arrow-right-left {
+	right: 50%;
+	margin-right: -2px;
+	top: 50%;
+	margin-top: -2px;
+	transform: rotate(30deg);
+}
+
+.arrow-right-right {
+	right: 50%;
+	margin-right: -2px;
+	bottom: 50%;
+	margin-bottom: -2px;
+	transform: rotate(-30deg);
+}
