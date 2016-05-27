@@ -1,6 +1,14 @@
-.video {
+#webcam {
+	left: 20px;
+}
+
+.video-wrapper {
 	margin-top: 20px;
 	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 640px;
 }
 
 .title {
