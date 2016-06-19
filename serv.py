@@ -31,7 +31,7 @@ def servo():
     op = request.form['op']
     val = {
         'up': -30,
-        'down': 150,
+        'down': 120,
     }
     if not op:
         return jsonify(status='400', mesg='no op.')
