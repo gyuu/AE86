@@ -44,7 +44,7 @@ def back(sleep_time):
     GPIO.cleanup()
 
 
-def left(sleep_time):
+def right(sleep_time):
     GPIO.output(IN1, False)
     GPIO.output(IN2, False)
     GPIO.output(IN3, GPIO.HIGH)
@@ -53,7 +53,7 @@ def left(sleep_time):
     GPIO.cleanup()
 
 
-def right(sleep_time):
+def left(sleep_time):
     GPIO.output(IN1, GPIO.HIGH)
     GPIO.output(IN2, GPIO.LOW)
     GPIO.output(IN3, False)
