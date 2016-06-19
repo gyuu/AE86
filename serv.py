@@ -43,7 +43,7 @@ def servo():
 
 @app.route('/distance', methods=['GET'])
 def distance():
-    distance = checkdist()
+    distance = str(round(checkdist(), 3)) + ' m'
     return jsonify(status='200', distance=distance)
 
 if __name__ == '__main__':
