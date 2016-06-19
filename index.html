@@ -69,7 +69,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span id="w" class="circle">
+                <span id="w" class="circle car">
                   <span class="arrow arrow-horizon arrow-up-left">
                   </span>
                   <span class="arrow arrow-horizon arrow-up-right">
@@ -84,7 +84,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span id="a" class="circle">
+                <span id="a" class="circle car">
                   <span class="arrow arrow-vertical arrow-left-left">
                   </span>
                   <span class="arrow arrow-vertical arrow-left-right">
@@ -94,7 +94,7 @@
                 <span class="dontseeme">
                 </span>
 
-                <span id="d" class="circle">
+                <span id="d" class="circle car">
                   <span class="arrow arrow-vertical arrow-right-left">
                   </span>
                   <span class="arrow arrow-vertical arrow-right-right">
@@ -110,7 +110,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span id="s" class="circle">
+                <span id="s" class="circle car">
                   <span class="arrow arrow-horizon arrow-down-left">
                   </span>
                   <span class="arrow arrow-horizon arrow-down-right">
@@ -131,7 +131,7 @@
 
           <div class="row">
             <div class="wrapper">
-            <h2>巡航开关</h2>
+            <h2>距离显示</h2>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span class="circle">
+                <span id="up" class="circle servo">
                   <span class="arrow arrow-horizon arrow-up-left">
                   </span>
                   <span class="arrow arrow-horizon arrow-up-right">
@@ -191,22 +191,22 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span class="circle">
+<!--                 <span class="circle">
                   <span class="arrow arrow-vertical arrow-left-left">
                   </span>
                   <span class="arrow arrow-vertical arrow-left-right">
                   </span>
-                </span>
+                </span> -->
 
                 <span class="dontseeme">
                 </span>
 
-                <span class="circle">
+<!--                 <span class="circle">
                   <span class="arrow arrow-vertical arrow-right-left">
                   </span>
                   <span class="arrow arrow-vertical arrow-right-right">
                   </span>
-                </span>
+                </span> -->
 
               </div>
 
@@ -217,7 +217,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span class="circle">
+                <span id="down" class="circle servo">
                   <span class="arrow arrow-horizon arrow-down-left">
                   </span>
                   <span class="arrow arrow-horizon arrow-down-right">
@@ -243,8 +243,16 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $(".circle").click(function() {
+        $(".car").click(function() {
           $.post("/car",
+            {'op':$(this).attr("id")},
+            function(data){
+              console.log(data);
+            });
+        });
+
+        $(".servo").click(function() {
+          $.post("/servo",
             {'op':$(this).attr("id")},
             function(data){
               console.log(data);
