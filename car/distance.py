@@ -5,6 +5,10 @@ import time
 
 
 def checkdist():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(2, GPIO.OUT, initial=GPIO.LOW)
+    GPIO.setup(3, GPIO.IN)
+
     GPIO.output(2, GPIO.HIGH)
     time.sleep(0.000010)
     GPIO.output(2, GPIO.LOW)
