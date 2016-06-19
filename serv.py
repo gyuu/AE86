@@ -7,6 +7,7 @@ from flask import (
 
 from move import move
 from car.rotate import rotate
+from car.distance import checkdist
 
 app = Flask(__name__, template_folder=".")
 
@@ -38,6 +39,12 @@ def servo():
     else:
         rotate(val[op])
         return jsonify(status='200', mesg=op)
+
+
+@app.route('/distance', methods=['GET'])
+def distance():
+    distance = checkdist()
+    return jsonify(distance=distance)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

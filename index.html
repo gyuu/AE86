@@ -146,9 +146,7 @@
             <div class="col-md-12">
 
               <div class="wrapper">
-                <span class="circle">
-                  <span class="cube"></span>
-                </span>
+                  <span id="distance"></span>
               </div>
 
             </div>
@@ -240,6 +238,18 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+
+      function getDistance() {
+        $.get('/distance', function(data) {
+          $("#distance").text(data['distance']);
+          console.log(data);
+        });
+      }
+
+      setInterval('getDistance()', 1000);
+
+    </script>
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -258,6 +268,7 @@
               console.log(data);
             });
         });
+
       });
 
     </script>
