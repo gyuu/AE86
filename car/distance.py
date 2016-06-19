@@ -19,9 +19,9 @@ def checkdist():
 
 
 if __name__ == '__main__':
-	GPIO.setmode(GPIO.BCM)
-	GPIO.setup(2, GPIO.OUT, initial=GPIO.LOW)
-	GPIO.setup(3, GPIO.IN)
+    GPIO.setmode(GPIO.BCM)
+        GPIO.setup(2, GPIO.OUT, initial=GPIO.LOW)
+        GPIO.setup(3, GPIO.IN)
 
     time.sleep(2)
     try:
