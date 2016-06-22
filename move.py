@@ -1,16 +1,16 @@
 import RPi.GPIO as GPIO
 import time
 
-IN1 = 11
-IN2 = 12
-IN3 = 13
-IN4 = 15
+IN1 = 17
+IN2 = 18
+IN3 = 27
+IN4 = 22
 
 TIME_STEP = 0.5
 
 
 def init():
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(IN1, GPIO.OUT)
     GPIO.setup(IN2, GPIO.OUT)
     GPIO.setup(IN3, GPIO.OUT)
